@@ -54,7 +54,7 @@ with col_check:
 # Row 2: Universal Sorting Control Dropdown
 sort_option = st.selectbox(
     "Sort by:",
-    options=["Default List Order", "State (A-Z)", "Wage Scale (Highest First)", "Amount of Calls (Highest First)"]
+    options=["Local # (Lowest First)", "State (A-Z)", "Wage Scale (Highest First)", "# of Calls (Highest First)"]
 )
 
 st.divider()
