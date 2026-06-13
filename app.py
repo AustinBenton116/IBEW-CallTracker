@@ -10,7 +10,8 @@ if not os.path.exists("jobs_data.json"):
     scraper.run_scraper()
 
 st.set_page_config(page_title="IBEW Job Tracker", layout="centered")
-st.title("⚡ IBEW Job Calls")
+st.title("⚡ IBEW Job Calls ⚡")
+st.title("Courtesy: Austin Benton")
 
 # --- DYNAMIC TIMEZONE LOGIC ---
 # Get the user's timezone from their browser context
