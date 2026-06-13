@@ -11,7 +11,6 @@ if not os.path.exists("jobs_data.json"):
 
 st.set_page_config(page_title="IBEW Job Tracker", layout="centered")
 st.title("⚡ IBEW Job Calls ⚡")
-st.write("**Courtesy:** Austin Benton")
 
 # --- DYNAMIC TIMEZONE LOGIC ---
 # Get the user's timezone from their browser context
@@ -28,6 +27,8 @@ else:
 
 st.write(f"⏱️ **Data Last Updated:** {timestamp}")
 st.divider()
+
+st.write("**Courtesy:** Austin Benton")
 
 # ... (Rest of your app code)
 
