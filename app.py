@@ -26,7 +26,7 @@ else:
     timestamp = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p (UTC)")
 
 st.write(f"⏱️ **Data Last Updated:** {timestamp}")
-st.write("**Courtesy:** Austin Benton")
+st.write("**Courtesy:** Austin Benton LU177")
 st.divider()
 
 
