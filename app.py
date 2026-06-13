@@ -46,10 +46,10 @@ st.write("### 🔍 Search & Filter Locals")
 # Row 1: Search text input and "Has Work" toggle checkbox
 col_search, col_check = st.columns([3, 1])
 with col_search:
-    search_query = st.text_input("Search by Local name or State/City (e.g., 'Local 13' or 'IL')", "").strip().upper()
+    search_query = st.text_input("Search by Local or State/City (e.g., 'Local 13' or 'IL')", "").strip().upper()
 with col_check:
     st.write("##") # Form vertical balancing block
-    filter_has_work = st.checkbox("Has Work Only", value=False)
+    filter_has_work = st.checkbox("Has Work", value=False)
 
 # Row 2: Universal Sorting Control Dropdown
 sort_option = st.selectbox(
