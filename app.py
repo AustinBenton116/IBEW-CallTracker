@@ -3,18 +3,32 @@ import json
 import os
 import scraper
 from datetime import datetime
+import pytz
 
-# TRIGGER: This ensures the data exists when the app launches
+# TRIGGER: Scraper logic remains the same
 if not os.path.exists("jobs_data.json"):
     scraper.run_scraper()
 
 st.set_page_config(page_title="IBEW Job Tracker", layout="centered")
 st.title("⚡ IBEW Job Calls")
 
-# Generate the dynamic launcher timestamp live
-timestamp = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p")
+# --- DYNAMIC TIMEZONE LOGIC ---
+# Get the user's timezone from their browser context
+user_tz_str = st.context.timezone 
+
+if user_tz_str:
+    user_tz = pytz.timezone(user_tz_str)
+    # Get current time in UTC, then convert to user's timezone
+    now = datetime.now(pytz.utc).astimezone(user_tz)
+    timestamp = now.strftime("%A, %B %d, %Y at %I:%M %p %Z")
+else:
+    # Fallback if browser doesn't share timezone
+    timestamp = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p (UTC)")
+
 st.write(f"⏱️ **Data Last Updated:** {timestamp}")
 st.divider()
+
+# ... (Rest of your app code)
 
 try:
     with open("jobs_data.json", "r") as f:
