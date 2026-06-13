@@ -26,11 +26,9 @@ else:
     timestamp = datetime.now().strftime("%A, %B %d, %Y at %I:%M %p (UTC)")
 
 st.write(f"⏱️ **Data Last Updated:** {timestamp}")
+st.write("**Courtesy:** Austin Benton")
 st.divider()
 
-st.write("**Courtesy:** Austin Benton")
-
-# ... (Rest of your app code)
 
 try:
     with open("jobs_data.json", "r") as f:
