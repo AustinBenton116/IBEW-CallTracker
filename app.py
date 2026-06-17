@@ -29,7 +29,6 @@ st.write(f"⏱️ **Data Last Updated:** {timestamp}")
 st.write("**Created by:** Austin Benton LU177")
 st.divider()
 
-
 try:
     with open("jobs_data.json", "r") as f:
         data = json.load(f)
@@ -80,7 +79,7 @@ if sort_option == "State (A-Z)":
     filtered_locals = sorted(filtered_locals, key=lambda x: x["state"])
 elif sort_option == "Wage Scale (Highest First)":
     filtered_locals = sorted(filtered_locals, key=lambda x: x["highest_wage"], reverse=True)
-elif sort_option == "Amount of Calls (Highest First)":
+elif sort_option == "# of Calls (Highest First)":
     filtered_locals = sorted(filtered_locals, key=lambda x: x["call_count"], reverse=True)
 
 
